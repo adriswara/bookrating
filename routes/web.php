@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookListController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,4 +21,10 @@ Route::get('/', function () {
 
 Route::get('/index', function () {
     return view('index');
-});
+})->name('index');
+
+// Route::get('/booklist', function () {
+//     return view('booklist');
+// })->name('booklist');
+
+Route::get('/booklist', [BookListController::class, 'index'])->name('booklist');

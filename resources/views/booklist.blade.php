@@ -12,21 +12,39 @@
 
 <body>
     <h1>Book Rating Application</h1>
-    <p>This is a new page created in Laravel.</p>
+    <p>Booklist</p>
 
     <div class="container">
         <div class="row">
             <div class="col-sm">
-                <a href="{{ route('booklist') }}" class="btn btn-primary">Go</a>
+                <a href="{{ route('index') }}" class="btn btn-primary">Back</a>
             </div>
             <div class="col-sm">
-                <button type="button" class="btn btn-primary">10 Most Famouse Author List</button>
+                <button type="button" class="btn btn-primary">Container 2</button>
             </div>
             <div class="col-sm">
-                <button type="button" class="btn btn-primary">Insert Rating</button>
+                <button type="button" class="btn btn-primary">Container 3</button>
             </div>
         </div>
     </div>
+
+     <table class="table table-bordered table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach ($books as $book)
+        <tr>
+          <td>{{ $book->id }}</td>
+          <td>{{ $book->name }}</td>
+        </tr>
+      @endforeach
+    </tbody>
+  </table>
+
 
 
 </body>

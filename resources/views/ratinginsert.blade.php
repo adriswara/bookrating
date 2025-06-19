@@ -12,18 +12,18 @@
 
 <body>
     <h1>Book Rating Application</h1>
-    <p>This is a new page created in Laravel.</p>
+    <p>Give Rating</p>
 
     <div class="container">
         <div class="row">
             <div class="col-sm">
-                <a href="{{ route('booklist') }}" class="btn btn-primary">Go</a>
+                <a href="{{ route('index') }}" class="btn btn-primary">Back</a>
             </div>
             <div class="col-sm">
-                <button type="button" class="btn btn-primary">10 Most Famouse Author List</button>
+                <button type="button" class="btn btn-primary">Container 2</button>
             </div>
             <div class="col-sm">
-                <button type="button" class="btn btn-primary">Insert Rating</button>
+                <button type="button" class="btn btn-primary">Container 3</button>
             </div>
         </div>
     </div>
