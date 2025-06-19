@@ -10,24 +10,31 @@
 
 </head>
 
-<body>
-    <h1>Book Rating Application</h1>
-    <p>Give Rating</p>
+<h1>Book Rating Application</h1>
+<p>>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm">
-                <a href="{{ route('index') }}" class="btn btn-primary">Back</a>
-            </div>
-            <div class="col-sm">
-                <button type="button" class="btn btn-primary">Container 2</button>
-            </div>
-            <div class="col-sm">
-                <button type="button" class="btn btn-primary">Container 3</button>
-            </div>
-        </div>
+<div class="container">
+    <div class="row">
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($books as $book)
+                <tr>
+                    <td>{{ $book->id }}</td>
+                    <td>{{ $book->name }}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-primary">Container 3</button>
     </div>
-
+</div>
+</div>
 
 </body>
 

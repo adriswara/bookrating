@@ -17,10 +17,10 @@
     <div class="container">
         <div class="row">
             <div class="col-sm">
-                <a href="{{ route('booklist') }}" class="btn btn-primary">Go</a>
+                <a href="{{ route('booklist') }}" class="btn btn-primary">Towing Provider Police</a>
             </div>
             <div class="col-sm">
-                <button type="button" class="btn btn-primary">10 Most Famouse Author List</button>
+                <a href="{{ route('booklist') }}" class="btn btn-primary">10 Most Famouse Author List</a>
             </div>
             <div class="col-sm">
                 <button type="button" class="btn btn-primary">Insert Rating</button>

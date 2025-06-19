@@ -20,13 +20,30 @@
                 <a href="{{ route('index') }}" class="btn btn-primary">Back</a>
             </div>
             <div class="col-sm">
-                <button type="button" class="btn btn-primary">Container 2</button>
+                <!-- <button type="button" class="btn btn-primary">Container 2</button> -->
             </div>
             <div class="col-sm">
-                <button type="button" class="btn btn-primary">Container 3</button>
+                <!-- <button type="button" class="btn btn-primary">Container 3</button> -->
             </div>
         </div>
     </div>
+
+     <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($authors as $author)
+            <tr>
+                <td>{{ $author->id }}</td>
+                <td>{{ $author->name }}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
 
 
 </body>

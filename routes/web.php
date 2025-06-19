@@ -27,4 +27,5 @@ Route::get('/index', function () {
 //     return view('booklist');
 // })->name('booklist');
 
+Route::get('/authorlist', [AuthorListController::class, 'index'])->name('authorlist');
 Route::get('/booklist', [BookListController::class, 'index'])->name('booklist');

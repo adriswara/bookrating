@@ -28,22 +28,22 @@
         </div>
     </div>
 
-     <table class="table table-bordered table-striped">
-    <thead class="table-dark">
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-      </tr>
-    </thead>
-    <tbody>
-      @foreach ($books as $book)
-        <tr>
-          <td>{{ $book->id }}</td>
-          <td>{{ $book->name }}</td>
-        </tr>
-      @endforeach
-    </tbody>
-  </table>
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($books as $book)
+            <tr>
+                <td>{{ $book->id }}</td>
+                <td>{{ $book->name }}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
 
 
 
