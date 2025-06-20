@@ -20,7 +20,7 @@ class BookSeeder extends Seeder
 
         for ($i = 0; $i < 100000; $i++) {
             DB::table('book')->insert([
-                'name' => $faker->name,
+                'name' => $faker->sentence(3),
                 'idCategory' =>  rand(1, 3000),
                 'idAuthor' => rand(1, 10),
             ]);

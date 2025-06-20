@@ -20,7 +20,7 @@ class BookCategorySeeder extends Seeder
 
         for ($i = 0; $i < 3000; $i++) {
             DB::table('book_category')->insert([
-                'name' => $faker->name,
+                'name' => $faker->sentence(1),
             ]);
         }
     }
