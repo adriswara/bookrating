@@ -15,6 +15,8 @@ class BookListController extends Controller
     {
         // $books = DB::select('select * from book limit 10');
 
+        $limit = $request->input('limit', 10); //default = 10
+
         $query = DB::table('rating as r')
             ->selectRaw('DISTINCT b.name as bookname, a.name as authorname, c.name as categoryname, sum.score, agg.voter')
             ->join('book as b', 'r.idBook', '=', 'b.id')
@@ -29,7 +31,7 @@ class BookListController extends Controller
             $query->where('b.name', 'like', '%' . $request->search . '%');
         }
 
-        $books = $query->get();
+        $books = $query->limit($limit)->get();
 
         return view('booklist', ['books' => $books]);
     }
