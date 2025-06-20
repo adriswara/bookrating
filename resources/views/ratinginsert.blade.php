@@ -1,14 +1,5 @@
-<!-- resources/views/my-page.blade.php -->
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Book Rating Application</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-
-
-</head>
+@extends('layouts.app')
+@section('content')
 
 <h1>Book Rating Application</h1>
 <h2>Rating insert</h2>
@@ -32,6 +23,7 @@
 
     <form action="{{ route('ratinginsert.store') }}" method="POST">
         @csrf
+
         <!-- Author Dropdown -->
         <div class="mb-3">
             <label for="idAuthor" class="form-label">Book Author</label>
@@ -68,12 +60,7 @@
             <button type="submit" class="btn btn-success">Submit Rating</button>
         </div>
     </form>
-
-
 </div>
-</div>
-
-</body>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -98,4 +85,4 @@
     });
 </script>
 
-</html>
+@endsection
