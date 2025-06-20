@@ -19,13 +19,27 @@
             <div class="col-sm">
                 <a href="{{ route('index') }}" class="btn btn-primary">Back</a>
             </div>
+        </div>
+        <div class="row">
             <div class="col-sm">
-                <button type="button" class="btn btn-primary">Container 2</button>
-            </div>
-            <div class="col-sm">
-                <button type="button" class="btn btn-primary">Container 3</button>
+                <select class="form-select" id="" name="" required>
+                    <option value="">List of Shown</option>
+                    @for($i = 1; $i <= 10; $i++)
+                        <option value="{{ $i*10 }}">{{ $i*10 }}</option>
+                        @endfor
+                </select>
             </div>
         </div>
+        <form method="GET" action="{{ route('booklist') }}" class="mb-3">
+            <div class="row">
+                <div class="col-sm">
+                    <input type="text" class="form-control" name="search" id="searchInput" placeholder="Search by book name..." value="{{ request('search') }}">
+                </div>
+                <div class="col-sm">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </div>
+        </form>
     </div>
 
     <table class="table table-bordered table-striped">
