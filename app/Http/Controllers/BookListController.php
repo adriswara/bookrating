@@ -28,7 +28,9 @@ class BookListController extends Controller
             ->limit(10);
 
         if ($request->filled('search')) {
-            $query->where('b.name', 'like', '%' . $request->search . '%');
+            // $query->where('b.name', 'like', '%' . $request->search . '%');
+            $query->where('b.name', 'like', '%' . $request->search . '%')
+                ->orWhere('a.name', 'like', '%' . $request->search . '%');
         }
 
         $books = $query->limit($limit)->get();
