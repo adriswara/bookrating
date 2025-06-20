@@ -31,21 +31,24 @@
     <table class="table table-bordered table-striped">
         <thead class="table-dark">
             <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Category</th>
-                <th>Score Sum</th>
+                <th>No</th>
+                <th>Book Name</th>
+                <th>Category Name</th>
+                <th>Author Name</th>
+                <th>Average Rating</th>
                 <th>Voter</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($books as $book)
             <tr>
-                <td>{{ $book->id }}</td>
-                <td>{{ $book->idBook }}</td>
-                <td>{{ $book->idCategory }}</td>
+                <td>{{ $loop->iteration }}</td>
+                <td>{{ $book->bookname }}</td>
+                <td>{{ $book->categoryname }}</td>
+                <td>{{ $book->authorname }}</td>
                 <td>{{ $book->score }}</td>
                 <td>{{ $book->voter }}</td>
+
             </tr>
             @endforeach
         </tbody>

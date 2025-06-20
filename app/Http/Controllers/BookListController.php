@@ -17,17 +17,21 @@ class BookListController extends Controller
 
         $books = DB::select('
         
-            SELECT r.id, r.idBook, r.idAuthor, r.idCategory, sum.score ,agg.voter from rating r 
+            SELECT distinct b.name as "bookname", a.name as "authorname", c.name as "categoryname", sum.score ,agg.voter from rating r 
+			INNER JOIN book b on r.idBook = b.id
+            INNER JOIN author a on b.idAuthor = a.id 
+            INNER JOIN book_category c on b.idCategory = c.id 
             JOIN (
                 SELECT idBook, COUNT(id) as voter
                 from rating
                 GROUP BY idBook
             ) agg ON r.idBook = agg.idBook
             JOIN(
-                SELECT idBook, SUM(value) as score
+                SELECT idBook, AVG(value) as score
                 from rating
                 GROUP by idBook
-            ) sum on r.idBook = sum.idbook limit 10
+            ) sum on r.idBook = sum.idbook  
+            ORDER BY `sum`.`score` DESC limit 10
         ');
 
         return view('booklist', ['books' => $books]);
@@ -55,3 +59,52 @@ class BookListController extends Controller
 //     from rating
 //     GROUP by idBook
 // ) sum on r.idBook = sum.idbook
+
+
+// SELECT r.id, b.name as "bookname", a.name as "authorname", c.name as "categoryname", sum.score ,agg.voter from rating r 
+// 			INNER JOIN book b on r.idBook = b.id
+//             INNER JOIN author a on b.idAuthor = a.id 
+//             INNER JOIN book_category c on b.idCategory = c.id 
+//             JOIN (
+//                 SELECT idBook, COUNT(id) as voter
+//                 from rating
+//                 GROUP BY idBook
+//             ) agg ON r.idBook = agg.idBook
+//             JOIN(
+//                 SELECT idBook, SUM(value) as score
+//                 from rating
+//                 GROUP by idBook
+//             ) sum on r.idBook = sum.idbook;
+
+
+// SELECT r.id, b.name as "bookname", a.name as "authorname", c.name as "categoryname", sum.score ,agg.voter from rating r 
+// 			INNER JOIN book b on r.idBook = b.id
+//             INNER JOIN author a on b.idAuthor = a.id 
+//             INNER JOIN book_category c on b.idCategory = c.id 
+//             JOIN (
+//                 SELECT idBook, COUNT(id) as voter
+//                 from rating
+//                 GROUP BY idBook
+//             ) agg ON r.idBook = agg.idBook
+//             JOIN(
+//                 SELECT idBook, AVG(value) as score
+//                 from rating
+//                 GROUP by idBook
+//             ) sum on r.idBook = sum.idbook  
+// ORDER BY `bookname` ASC
+
+// SELECT  distinct b.name as "bookname", a.name as "authorname", c.name as "categoryname", sum.score ,agg.voter from rating r 
+// 			INNER JOIN book b on r.idBook = b.id
+//             INNER JOIN author a on b.idAuthor = a.id 
+//             INNER JOIN book_category c on b.idCategory = c.id 
+//             JOIN (
+//                 SELECT idBook, COUNT(id) as voter
+//                 from rating
+//                 GROUP BY idBook
+//             ) agg ON r.idBook = agg.idBook
+//             JOIN(
+//                 SELECT idBook, AVG(value) as score
+//                 from rating
+//                 GROUP by idBook
+//             ) sum on r.idBook = sum.idbook  
+// ORDER BY `bookname` ASC;

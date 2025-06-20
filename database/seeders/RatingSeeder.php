@@ -26,9 +26,7 @@ class RatingSeeder extends Seeder
             for ($j = 0; $j < $batchSize; $j++) {
                 $data[] = [
                     'value' => rand(1, 10),
-                    'idAuthor' => rand(1, 1000),
-                    'idCategory' => rand(1, 3000),
-                    'idBook' => rand(1, 100000),
+                    'idBook' => rand(1, 100),
                 ];
             }
 

@@ -19,7 +19,7 @@ class BookCategorySeeder extends Seeder
         $faker = Faker::create();
 
         for ($i = 0; $i < 3000; $i++) {
-            DB::table('book')->insert([
+            DB::table('book_category')->insert([
                 'name' => $faker->name,
             ]);
         }
