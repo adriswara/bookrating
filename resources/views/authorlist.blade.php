@@ -28,18 +28,21 @@
         </div>
     </div>
 
-     <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped">
         <thead class="table-dark">
             <tr>
                 <th>ID</th>
-                <th>Name</th>
+                <th>Author Name</th>
+                <th>Voter</th>
+
             </tr>
         </thead>
         <tbody>
             @foreach ($authors as $author)
             <tr>
-                <td>{{ $author->id }}</td>
-                <td>{{ $author->name }}</td>
+                <td>{{ $loop->iteration }}</td>
+                <td>{{ $author->author }}</td>
+                <td>{{ $author->voter}}</td>
             </tr>
             @endforeach
         </tbody>
