@@ -15,6 +15,6 @@ class AuthorListController extends Controller
     {
         $authors = DB::select('select * from author limit 10');
 
-        return view('booklist', ['authors' => $authors]);
+        return view('authorlist', ['authors' => $authors]);
     }
 }

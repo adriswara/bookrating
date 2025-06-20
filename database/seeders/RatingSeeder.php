@@ -25,14 +25,14 @@ class RatingSeeder extends Seeder
 
             for ($j = 0; $j < $batchSize; $j++) {
                 $data[] = [
-                    'rating' => rand(1, 10),
+                    'value' => rand(1, 10),
                     'idAuthor' => rand(1, 1000),
-                    'idBookCategory' => rand(1, 3000),
+                    'idCategory' => rand(1, 3000),
                     'idBook' => rand(1, 100000),
                 ];
             }
 
-            DB::table('your_table_name')->insert($data);
+            DB::table('rating')->insert($data);
             echo "Inserted batch: " . ($i + $batchSize) . "\n";
         }
     }

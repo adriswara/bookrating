@@ -33,13 +33,19 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
+                <th>Category</th>
+                <th>Score Sum</th>
+                <th>Voter</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($books as $book)
             <tr>
                 <td>{{ $book->id }}</td>
-                <td>{{ $book->name }}</td>
+                <td>{{ $book->idBook }}</td>
+                <td>{{ $book->idCategory }}</td>
+                <td>{{ $book->score }}</td>
+                <td>{{ $book->voter }}</td>
             </tr>
             @endforeach
         </tbody>
