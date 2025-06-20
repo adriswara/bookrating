@@ -46,8 +46,8 @@
 
         <!-- Book Dropdown -->
         <div class="mb-3">
-            <label for="idBook" class="form-label">Book Name</label>
-            <select class="form-select" id="idBook" name="idBook" required>
+            <label for="book-dropdown" class="form-label">Book Name</label>
+            <select class="form-select" id="book-dropdown" required>
                 <option value="">Select a Book</option>
                 <option value=""></option>
             </select>
@@ -75,5 +75,28 @@
 </div>
 
 </body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $('#idAuthor').on('change', function() {
+        var idAuthor = $(this).val();
+        $('#book-dropdown').html('<option value="">Loading...</option>');
+        if (idAuthor) {
+            $.ajax({
+                url: '/books/by-author/' + idAuthor,
+                type: 'GET',
+                success: function(data) {
+                    var options = '<option value="">Select Book</option>';
+                    $.each(data, function(key, book) {
+                        options += '<option value="' + book.id + '">' + book.name + '</option>';
+                    });
+                    $('#book-dropdown').html(options);
+                }
+            });
+        } else {
+            $('#book-dropdown').html('<option value="">Select Book</option>');
+        }
+    });
+</script>
 
 </html>

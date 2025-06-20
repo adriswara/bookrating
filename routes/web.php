@@ -35,3 +35,4 @@ Route::get('/index', function () {
 Route::get('/authorlist', [AuthorListController::class, 'index'])->name('authorlist');
 Route::get('/booklist', [BookListController::class, 'index'])->name('booklist');
 Route::get('/ratinginsert', [RatingInsertController::class, 'index'])->name('ratinginsert');
+Route::get('/books/by-author/{author}', [RatingInsertController::class, 'getByCategory']);

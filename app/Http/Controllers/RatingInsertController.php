@@ -20,4 +20,10 @@ class RatingInsertController extends Controller
 
         return view('ratinginsert', ['authors' => $authors]);
     }
+
+    public function getByCategory($categoryId)
+    {
+        $books = DB::select('SELECT book.id, book.name FROM book WHERE idCategory = ?', [$categoryId]);
+        return response()->json($books);
+    }
 }

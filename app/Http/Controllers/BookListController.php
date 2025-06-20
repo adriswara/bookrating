@@ -36,10 +36,9 @@ class BookListController extends Controller
 
         return view('booklist', ['books' => $books]);
     }
+
+    
 }
-
-
-
 // SELECT r.id, r.idBook, r.idAuthor, agg.voter from rating r 
 // JOIN (
 // 	SELECT idBook, COUNT(id) as voter
@@ -107,4 +106,4 @@ class BookListController extends Controller
 //                 from rating
 //                 GROUP by idBook
 //             ) sum on r.idBook = sum.idbook  
-// ORDER BY `bookname` ASC;
+//                  ORDER BY `bookname` ASC;
