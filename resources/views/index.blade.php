@@ -20,10 +20,10 @@
                 <a href="{{ route('booklist') }}" class="btn btn-primary">Book list</a>
             </div>
             <div class="col-sm">
-                <a href="{{ route('authorlist') }}" class="btn btn-primary">10 Most Famouse Author List</a>
+                <a href="{{ route('authorlist') }}" class="btn btn-primary">10 Most Famous Author List</a>
             </div>
             <div class="col-sm">
-                <button type="button" class="btn btn-primary">Insert Rating</button>
+                <a href="{{ route('ratinginsert') }}" class="btn btn-primary">Insert Rating</a>
             </div>
         </div>
     </div>

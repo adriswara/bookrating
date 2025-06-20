@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\BookListController;
 use App\Http\Controllers\AuthorListController;
+use App\Http\Controllers\RatingInsertController;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\View;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,3 +34,4 @@ Route::get('/index', function () {
 
 Route::get('/authorlist', [AuthorListController::class, 'index'])->name('authorlist');
 Route::get('/booklist', [BookListController::class, 'index'])->name('booklist');
+Route::get('/ratinginsert', [RatingInsertController::class, 'index'])->name('ratinginsert');
