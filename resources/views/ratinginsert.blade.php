@@ -30,9 +30,8 @@
         </div>
     </div>
 
-    <form action="" method="POST">
-
-
+    <form action="{{ route('ratinginsert.store') }}" method="POST">
+        @csrf
         <!-- Author Dropdown -->
         <div class="mb-3">
             <label for="idAuthor" class="form-label">Book Author</label>
@@ -46,8 +45,8 @@
 
         <!-- Book Dropdown -->
         <div class="mb-3">
-            <label for="book-dropdown" class="form-label">Book Name</label>
-            <select class="form-select" id="book-dropdown" required>
+            <label for="idBook" class="form-label">Book Name</label>
+            <select class="form-select" id="idBook" name="idBook" required>
                 <option value="">Select a Book</option>
                 <option value=""></option>
             </select>
@@ -80,7 +79,7 @@
 <script>
     $('#idAuthor').on('change', function() {
         var idAuthor = $(this).val();
-        $('#book-dropdown').html('<option value="">Loading...</option>');
+        $('#idBook').html('<option value="">Loading...</option>');
         if (idAuthor) {
             $.ajax({
                 url: '/books/by-author/' + idAuthor,
@@ -90,11 +89,11 @@
                     $.each(data, function(key, book) {
                         options += '<option value="' + book.id + '">' + book.name + '</option>';
                     });
-                    $('#book-dropdown').html(options);
+                    $('#idBook').html(options);
                 }
             });
         } else {
-            $('#book-dropdown').html('<option value="">Select Book</option>');
+            $('#idBook').html('<option value="">Select Book</option>');
         }
     });
 </script>

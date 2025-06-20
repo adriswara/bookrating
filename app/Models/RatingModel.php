@@ -7,16 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class RatingModel extends Model
 {
-    protected $table = 'rating'; // optional if table name matches plural of model
-
-    protected $fillable = [
-        'idBook',
-        'value',
-    ];
-
-    // Relationships
-    public function book()
-    {
-        return $this->belongsTo(Book::class, 'idBook');
-    }
+       protected $fillable = ['category_id', 'book_id', 'rating'];
 }
