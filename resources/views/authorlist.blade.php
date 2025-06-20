@@ -4,17 +4,14 @@
 
 <div class="container">
 
-    <h1>Authorlist</h1>
+   <div class="row d-flex text-center mt-3">
+        <h1>Author List</h1>
+        <h2>10 Most Famous Author</h2>
+    </div>
 
-    <div class="row">
+    <div class="row my-3">
         <div class="col-sm">
             <a href="{{ route('index') }}" class="btn btn-primary">Back</a>
-        </div>
-        <div class="col-sm">
-            <!-- <button type="button" class="btn btn-primary">Container 2</button> -->
-        </div>
-        <div class="col-sm">
-            <!-- <button type="button" class="btn btn-primary">Container 3</button> -->
         </div>
     </div>
 

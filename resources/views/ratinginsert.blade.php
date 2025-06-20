@@ -3,17 +3,13 @@
 
 <div class="container">
 
-    <h1>Insert Rating</h1>
+    <div class="row d-flex text-center mt-3">
+        <h1>Insert Rating</h1>
+    </div>
 
     <div class="row">
         <div class="col-sm">
             <a href="{{ route('index') }}" class="btn btn-primary">Back</a>
-        </div>
-        <div class="col-sm">
-            <!-- <button type="button" class="btn btn-primary">Container 2</button> -->
-        </div>
-        <div class="col-sm">
-            <!-- <button type="button" class="btn btn-primary">Container 3</button> -->
         </div>
     </div>
 
@@ -21,7 +17,7 @@
         @csrf
 
         <!-- Author Dropdown -->
-        <div class="mb-3">
+        <div class=" row my-3">
             <label for="idAuthor" class="form-label">Book Author</label>
             <select class="form-select" id="idAuthor" name="idAuthor" required>
                 <option value="">Select an Author</option>
@@ -32,7 +28,7 @@
         </div>
 
         <!-- Book Dropdown -->
-        <div class="mb-3">
+        <div class="row mb-3">
             <label for="idBook" class="form-label">Book Name</label>
             <select class="form-select" id="idBook" name="idBook" required>
                 <option value="">Select a Book</option>
@@ -41,7 +37,7 @@
         </div>
 
         <!-- Rating Dropdown -->
-        <div class="mb-4">
+        <div class="row mb-4">
             <label for="value" class="form-label">Drop Down</label>
             <select class="form-select" id="value" name="value" required>
                 <option value="">Select Rating</option>
