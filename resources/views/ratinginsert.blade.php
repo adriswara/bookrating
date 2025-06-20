@@ -1,23 +1,19 @@
 @extends('layouts.app')
 @section('content')
 
-<h1>Book Rating Application</h1>
-<h2>Rating insert</h2>
-<p>
-
 <div class="container">
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm">
-                <a href="{{ route('index') }}" class="btn btn-primary">Back</a>
-            </div>
-            <div class="col-sm">
-                <!-- <button type="button" class="btn btn-primary">Container 2</button> -->
-            </div>
-            <div class="col-sm">
-                <!-- <button type="button" class="btn btn-primary">Container 3</button> -->
-            </div>
+    <h1>Insert Rating</h1>
+
+    <div class="row">
+        <div class="col-sm">
+            <a href="{{ route('index') }}" class="btn btn-primary">Back</a>
+        </div>
+        <div class="col-sm">
+            <!-- <button type="button" class="btn btn-primary">Container 2</button> -->
+        </div>
+        <div class="col-sm">
+            <!-- <button type="button" class="btn btn-primary">Container 3</button> -->
         </div>
     </div>
 

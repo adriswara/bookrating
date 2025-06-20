@@ -2,20 +2,19 @@
 @extends('layouts.app')
 @section('content')
 
-    <h1>Book Rating Application</h1>
-    <p>Authorlist</p>
+<div class="container">
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm">
-                <a href="{{ route('index') }}" class="btn btn-primary">Back</a>
-            </div>
-            <div class="col-sm">
-                <!-- <button type="button" class="btn btn-primary">Container 2</button> -->
-            </div>
-            <div class="col-sm">
-                <!-- <button type="button" class="btn btn-primary">Container 3</button> -->
-            </div>
+    <h1>Authorlist</h1>
+
+    <div class="row">
+        <div class="col-sm">
+            <a href="{{ route('index') }}" class="btn btn-primary">Back</a>
+        </div>
+        <div class="col-sm">
+            <!-- <button type="button" class="btn btn-primary">Container 2</button> -->
+        </div>
+        <div class="col-sm">
+            <!-- <button type="button" class="btn btn-primary">Container 3</button> -->
         </div>
     </div>
 
@@ -38,4 +37,5 @@
             @endforeach
         </tbody>
     </table>
+</div>
 @endsection

@@ -35,5 +35,5 @@ Route::get('/index', function () {
 Route::get('/authorlist', [AuthorListController::class, 'index'])->name('authorlist');
 Route::get('/booklist', [BookListController::class, 'index'])->name('booklist');
 Route::get('/ratinginsert', [RatingInsertController::class, 'index'])->name('ratinginsert');
-Route::get('/books/by-author/{author}', [RatingInsertController::class, 'getByCategory']);
+Route::get('/books/by-author/{author}', [RatingInsertController::class, 'getByAuthor']);
 Route::post('/ratinginsert/store', [RatingInsertController::class, 'store'])->name('ratinginsert.store');

@@ -2,36 +2,34 @@
 @extends('layouts.app')
 @section('content')
 
-    <h1>Book Rating Application</h1>
-    <p>Booklist</p>
 
-    <div class="container">
+<div class="container">
+    <h1>Lists Of books</h1>
+    <div class="row">
+        <div class="col-sm">
+            <a href="{{ route('index') }}" class="btn btn-primary">Back</a>
+        </div>
+    </div>
+    <form method="GET" action="{{ route('booklist') }}" class="mb-3">
         <div class="row">
             <div class="col-sm">
-                <a href="{{ route('index') }}" class="btn btn-primary">Back</a>
+                <select class="form-select" id="limitSelect" name="limit" required>
+                    <option value="">List of Shown</option>
+                    @for($i = 1; $i <= 10; $i++)
+                        <option value="{{ $i*10 }}" {{ request('limit') == $i*10 ? 'selected' : '' }}>{{ $i*10 }}</option>
+                        @endfor
+                </select>
             </div>
         </div>
-        <form method="GET" action="{{ route('booklist') }}" class="mb-3">
-            <div class="row">
-                <div class="col-sm">
-                    <select class="form-select" id="limitSelect" name="limit" required>
-                        <option value="">List of Shown</option>
-                        @for($i = 1; $i <= 10; $i++)
-                            <option value="{{ $i*10 }}" {{ request('limit') == $i*10 ? 'selected' : '' }}>{{ $i*10 }}</option>
-                            @endfor
-                    </select>
-                </div>
+        <div class="row">
+            <div class="col-sm">
+                <input type="text" class="form-control" name="search" id="searchInput" placeholder="Search by book name..." value="{{ request('search') }}">
             </div>
-            <div class="row">
-                <div class="col-sm">
-                    <input type="text" class="form-control" name="search" id="searchInput" placeholder="Search by book name..." value="{{ request('search') }}">
-                </div>
-                <div class="col-sm">
-                    <button type="submit" class="btn btn-primary">Search</button>
-                </div>
+            <div class="col-sm">
+                <button type="submit" class="btn btn-primary">Search</button>
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
 
     <table class="table table-bordered table-striped">
         <thead class="table-dark">
@@ -58,4 +56,5 @@
             @endforeach
         </tbody>
     </table>
+</div>
 @endsection
